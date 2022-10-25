@@ -51,11 +51,11 @@ contract DGC is ERC20Burnable, Ownable {
     external
     onlyOwner
     {
-        require(_openSwapTimestamp != 0, "open time invalid");
+        require(_openSwapTimestamp != 0, "swap time cannot be changed");
         _openSwapTimestamp = openTransferTimestamp;
     }
 
-    function setDGCAccountFromFee(address[] memory accounts, bool status)
+    function setWhiteList(address[] memory accounts, bool status)
     external
     onlyOwner
     {
